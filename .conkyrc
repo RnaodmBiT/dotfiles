@@ -54,6 +54,8 @@ ${voffset 10}
 ${alignr}${font Ubuntu:style=Medium:pixelsize=20}${time %A %d %B %Y}${font}
 
 ${voffset 10}
+${font FontAwesome}${font}     ${battery_time} ${alignr}${battery}
+${hr}
 ${font FontAwesome}${font} ${alignr}${addrs wlp1s0}
 ${hr}
 ${font FontAwesome}${font} ${alignr}${exec curl ipinfo.io/ip}
