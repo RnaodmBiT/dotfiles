@@ -5,6 +5,10 @@ function e {
     gvim $1
 }
 
+function v {
+    xdg-open $1
+}
+
 function ff {
     find / -name $1 2> /dev/null
 }
