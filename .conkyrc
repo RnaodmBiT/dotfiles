@@ -49,7 +49,7 @@ conky.text = [[
 
 ${color1}
 ${voffset 20}
-${alignr}${font Ubuntu:style=medium:pixelsize=100}${time %H:%M}${font}
+${alignr}${font Ubuntu:style=medium:pixelsize=80}${time %l:%M}${font}
 ${voffset 10}
 ${alignr}${font Ubuntu:style=medium:pixelsize=20}${time %A %d %B %Y}${font}
 
