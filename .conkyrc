@@ -1,6 +1,6 @@
 conky.config = {
 	use_xft= true,
-	xftalpha= .1,
+	-- xftalpha= .1,
 	update_interval= 1,
 	total_run_times= 0,
 
@@ -21,7 +21,7 @@ conky.config = {
 
 	minimum_height= 10,
 
-	draw_shades= false,
+	draw_shades= true,
 	draw_outline= false,
 	draw_borders= false,
 	draw_graph_borders= true,
@@ -29,7 +29,7 @@ conky.config = {
 	default_color= 'FFFFFF',
 	default_shade_color= '333333',
 	default_outline_color= 'black',
-	color1 = 'A9A9A9',
+	color1 = 'FFFFFF',
 	color3 = '616161',
 
 	alignment= 'top_right',
@@ -49,9 +49,9 @@ conky.text = [[
 
 ${color1}
 ${voffset 20}
-${alignr}${font Ubuntu:style=Medium:pixelsize=100}${time %H:%M}${font}
+${alignr}${font Ubuntu:style=medium:pixelsize=100}${time %H:%M}${font}
 ${voffset 10}
-${alignr}${font Ubuntu:style=Medium:pixelsize=20}${time %A %d %B %Y}${font}
+${alignr}${font Ubuntu:style=medium:pixelsize=20}${time %A %d %B %Y}${font}
 
 ${voffset 10}
 ${font FontAwesome}${font}     ${battery_time} ${alignr}${battery}
@@ -61,16 +61,19 @@ ${hr}
 ${font FontAwesome}${font} ${alignr}${exec curl ipinfo.io/ip}
 ${hr}
 ${font FontAwesome}${font}  CPU ${alignr}${cpubar cpu0 16,160}
-${color3}${cpugraph cpu1 50,133 5e7b7b d8deeb -t} ${cpugraph cpu2 50,133 5e7b7b d8deeb -t}
-${cpugraph cpu3 50,133 5e7b7b d8deeb -t} ${cpugraph cpu4 50,133 5e7b7b d8deeb -t}
+${cpugraph cpu1 50,133 -t} ${cpugraph cpu2 50,133 -t}
+${cpugraph cpu3 50,133 -t} ${cpugraph cpu4 50,133  -t}
 ${hr}
 ${font FontAwesome}${font}  RAM ${alignr}${membar 16,160}
-${memgraph 50,270 5e7b7b d8deeb -t}
+${memgraph 50,270 -t}
 ${hr}
-${color1}${font FontAwesome}${font}  Download ${alignr}${downspeedf wlp1s0}k/s (${totaldown wlp1s0})
-${color3}${downspeedgraph wlp1s0 50,269 5e7b7b d8deeb}
+${font FontAwesome}${font}  Download ${alignr}${downspeedf wlp1s0}k/s
+${downspeedgraph wlp1s0 50,269}
 ${hr}
-${font FontAwesome}${font}  Upload ${alignr}${upspeedf wlp1s0}k/s (${totalup wlp1s0})
-${color3}${upspeedgraph wlp1s0 50,269 99c8e8 618094}
-
+${font FontAwesome}${font}  Upload ${alignr}${upspeedf wlp1s0}k/s
+${upspeedgraph wlp1s0 50,269}
+${hr}
+${font FontAwesome}${font}  Music${alignr}${exec cat $HOME/.config/Google\ Play\ Music\ Desktop\ Player/json_store/playback.json | jq '.song.artist' -r}
+${alignr}${exec cat $HOME/.config/Google\ Play\ Music\ Desktop\ Player/json_store/playback.json | jq '.song.title' -r}
+${font}
 ]]

@@ -13,6 +13,16 @@ function ff {
     find / -name $1 2> /dev/null
 }
 
+function p {
+    SCRIPT=$1
+    if [ $# -gt 1 ]
+    then
+        shift
+    fi
+    # The -- is needed to stop ipython from gobbling the arguments
+    ipython $SCRIPT -- $@
+}
+
 # Path to your oh-my-zsh installation.
   export ZSH=/home/bit/.oh-my-zsh
 
