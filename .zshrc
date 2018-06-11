@@ -6,7 +6,7 @@ function e {
 }
 
 function v {
-    xdg-open $1
+    xdg-open 2> /dev/null $1
 }
 
 function ff {

@@ -15,6 +15,7 @@ nnoremap <space> za
 " Add tab navigation shortcuts
 nmap <C-Tab> gt
 nmap <C-S-Tab> gT
+nmap <c-t> :tabedit<CR>
 
 " Setup OmniCppComplete
 set nocp
@@ -38,8 +39,10 @@ set tabstop=4        " tab width is 4 spaces
 set softtabstop=4
 set shiftwidth=4     " indent also with 4 spaces
 set expandtab        " expand tabs to spaces
-" wrap lines at 120 chars. 80 is somewaht antiquated with nowadays displays.
-set textwidth=120
+set cino+=(0
+" wrap lines at 80
+set textwidth=80
+set formatoptions+=t
 set autoindent
 " turn syntax highlighting on
 set t_Co=256
@@ -70,15 +73,17 @@ nmap <F2> :w<CR>
 " in insert mode F2 will exit insert, save, enters insert again
 imap <F2> <ESC>:w<CR>i
 " switch between header/source with F4
-map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+map <F4> :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
 " recreate tags file with F5
 map <F5> :!ctags -R –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
 " create doxygen comment
 map <F6> :Dox<CR>
 " build using makeprg with <F7>
-map <F7> :make<CR>
+map <F7> :!make<CR>
+" build and program
+map <F8> :!make program<CR>
 " build using makeprg with <S-F7>
-map <S-F7> :make clean all<CR>
+map <S-F7> :!make clean all<CR>
 " goto definition with F12
 map <F12> <C-]>
 " in diff mode we use the spell check keys for merging

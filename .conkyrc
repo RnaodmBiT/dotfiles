@@ -54,7 +54,8 @@ ${voffset 10}
 ${alignr}${font Ubuntu:style=medium:pixelsize=20}${time %A %d %B %Y}${font}
 
 ${voffset 10}
-${font FontAwesome}${font}     ${battery_time} ${alignr}${battery}
+${alignr}${battery_time}
+${font FontAwesome}${font} ${alignr}${battery}
 ${hr}
 ${font FontAwesome}${font} ${alignr}${addrs wlp1s0}
 ${hr}
