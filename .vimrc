@@ -33,13 +33,14 @@ filetype off
 " use indentation of previous line
 set autoindent
 " use intelligent indentation for C
+set cindent
 set smartindent
 " configure tabwidth and insert spaces instead of tabs
 set tabstop=4        " tab width is 4 spaces
 set softtabstop=4
 set shiftwidth=4     " indent also with 4 spaces
 set expandtab        " expand tabs to spaces
-set cino+=(0
+set cino=g0,(0
 " wrap lines at 80
 set textwidth=80
 set formatoptions+=t
@@ -112,26 +113,26 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'tmhedberg/SimpylFold'
-let g:SimpylFold_docstring_preview=1
+"Plugin 'tmhedberg/SimpylFold'
+"let g:SimpylFold_docstring_preview=1
 
-Plugin 'vim-scripts/indentpython.vim'
+"Plugin 'vim-scripts/indentpython.vim'
 
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
 
-Plugin 'nvie/vim-flake8'
+"Plugin 'nvie/vim-flake8'
 
-Plugin 'jistr/vim-nerdtree-tabs'
+"Plugin 'jistr/vim-nerdtree-tabs'
 
-Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-fugitive'
 
-Plugin 'Lokaltog/powerline', { 'rtp': 'powerline/bindings/vim/' }
+"Plugin 'Lokaltog/powerline', { 'rtp': 'powerline/bindings/vim/' }
 
-let python_highlight_all=1
+"let python_highlight_all=1
 
 call vundle#end()
 filetype plugin indent on

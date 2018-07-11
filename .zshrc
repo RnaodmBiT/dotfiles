@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 function e {
-    gvim $1
+    gvim 2> /dev/null $1
 }
 
 function v {
@@ -20,7 +20,7 @@ function p {
         shift
     fi
     # The -- is needed to stop ipython from gobbling the arguments
-    ipython $SCRIPT -- $@
+    ipython --pylab=qt5 -i $SCRIPT -- $@
 }
 
 # Path to your oh-my-zsh installation.
@@ -119,17 +119,19 @@ source $ZSH/oh-my-zsh.sh
 #
 #
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 ### ZNT's installer added snippet ###
-fpath=( "$fpath[@]" "$HOME/.config/znt/zsh-navigation-tools" )
-autoload n-aliases n-cd n-env n-functions n-history n-kill n-list n-list-draw n-list-input n-options n-panelize n-help
-autoload znt-usetty-wrapper znt-history-widget znt-cd-widget znt-kill-widget
-alias naliases=n-aliases ncd=n-cd nenv=n-env nfunctions=n-functions nhistory=n-history
-alias nkill=n-kill noptions=n-options npanelize=n-panelize nhelp=n-help
-zle -N znt-history-widget
-bindkey '^R' znt-history-widget
-setopt AUTO_PUSHD HIST_IGNORE_DUPS PUSHD_IGNORE_DUPS
-zstyle ':completion::complete:n-kill::bits' matcher 'r:|=** l:|=*'
+#fpath=( "$fpath[@]" "$HOME/.config/znt/zsh-navigation-tools" )
+#autoload n-aliases n-cd n-env n-functions n-history n-kill n-list n-list-draw n-list-input n-options n-panelize n-help
+#autoload znt-usetty-wrapper znt-history-widget znt-cd-widget znt-kill-widget
+#alias naliases=n-aliases ncd=n-cd nenv=n-env nfunctions=n-functions nhistory=n-history
+#alias nkill=n-kill noptions=n-options npanelize=n-panelize nhelp=n-help
+#zle -N znt-history-widget
+#bindkey '^R' znt-history-widget
+#setopt AUTO_PUSHD HIST_IGNORE_DUPS PUSHD_IGNORE_DUPS
+#zstyle ':completion::complete:n-kill::bits' matcher 'r:|=** l:|=*'
 ### END ###
 #
 
