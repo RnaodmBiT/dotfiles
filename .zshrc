@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/opt/cross/bin:$PATH"
 
 function e {
     gvim 2> /dev/null $1
@@ -18,9 +19,21 @@ function p {
     if [ $# -gt 1 ]
     then
         shift
+        # The -- is needed to stop ipython from gobbling the arguments
+        ipython --pylab=qt5 -i $SCRIPT -- $@
+    else
+        ipython --pylab=qt5 -i $SCRIPT
+    fi
+}
+
+function py {
+    SCRIPT=$1
+    if [ $# -gt 1 ]
+    then
+        shift
     fi
     # The -- is needed to stop ipython from gobbling the arguments
-    ipython --pylab=qt5 -i $SCRIPT -- $@
+    ipython --pylab=qt5 $SCRIPT -- $@
 }
 
 # Path to your oh-my-zsh installation.

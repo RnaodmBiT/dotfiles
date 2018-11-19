@@ -3,7 +3,7 @@
 " Author: Gerhard Gappmeier
 "
 
-set guifont=Monospace\ 12
+set guifont=Monospace\ 11
 set autochdir
 colorscheme evening
 
@@ -41,8 +41,8 @@ set softtabstop=4
 set shiftwidth=4     " indent also with 4 spaces
 set expandtab        " expand tabs to spaces
 set cino=g0,(0
-" wrap lines at 80
-set textwidth=80
+" wrap lines at 100
+set textwidth=100
 set formatoptions+=t
 set autoindent
 " turn syntax highlighting on
@@ -107,9 +107,14 @@ endif
 " Add trailing whitespace highlighting
 highlight ExtraWhitespace ctermbg=darkred guibg=darkred
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+" highlight TabCharacters ctermbg=darkred guibg=darkred
+" autocmd BufWinEnter * match TabCharacters /\t/
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
+Plugin 'tikhomirov/vim-glsl'
+autocmd! BufNewFile,BufRead *.vert,*.frag set ft=glsl
 
 Plugin 'gmarik/Vundle.vim'
 
