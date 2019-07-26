@@ -14,6 +14,10 @@ function ff {
     find / -name $1 2> /dev/null
 }
 
+function f {
+    nautilus -w .
+}
+
 function p {
     SCRIPT=$1
     if [ $# -gt 1 ]
@@ -28,12 +32,13 @@ function p {
 
 function py {
     SCRIPT=$1
-    if [ $# -gt 1 ]
-    then
-        shift
-    fi
+    shift
     # The -- is needed to stop ipython from gobbling the arguments
     ipython --pylab=qt5 $SCRIPT -- $@
+}
+
+function ltspice {
+    wine ~/.wine/drive_c/LTSpice/XVIIx64.exe
 }
 
 # Path to your oh-my-zsh installation.

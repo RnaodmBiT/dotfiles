@@ -1,7 +1,7 @@
 conky.config = {
 	use_xft= true,
 	-- xftalpha= .1,
-	update_interval= 1,
+	update_interval= 2,
 	total_run_times= 0,
 
 	background= true,
@@ -59,7 +59,7 @@ ${font FontAwesome}${font} ${alignr}${battery}
 ${hr}
 ${font FontAwesome}${font} ${alignr}${addrs wlp1s0}
 ${hr}
-${font FontAwesome}${font} ${alignr}${exec curl ipinfo.io/ip}
+${font FontAwesome}${font}  Last Upgrade ${alignr}${exec python ~/dotfiles/.pacman-last-update.py}
 ${hr}
 ${font FontAwesome}${font}  CPU ${alignr}${cpubar cpu0 16,160}
 ${cpugraph cpu1 50,133 -t} ${cpugraph cpu2 50,133 -t}
@@ -69,12 +69,9 @@ ${font FontAwesome}${font}  RAM ${alignr}${membar 16,160}
 ${memgraph 50,270 -t}
 ${hr}
 ${font FontAwesome}${font}  Download ${alignr}${downspeedf wlp1s0}k/s
-${downspeedgraph wlp1s0 50,269}
-${hr}
 ${font FontAwesome}${font}  Upload ${alignr}${upspeedf wlp1s0}k/s
-${upspeedgraph wlp1s0 50,269}
 ${hr}
-${font FontAwesome}${font}  Music${alignr}${exec cat $HOME/.config/Google\ Play\ Music\ Desktop\ Player/json_store/playback.json | jq '.song.artist' -r}
-${alignr}${exec cat $HOME/.config/Google\ Play\ Music\ Desktop\ Player/json_store/playback.json | jq '.song.title' -r}
+${font FontAwesome}${font}  TODO
+${head ~/.todo 5}
 ${font}
 ]]

@@ -41,8 +41,8 @@ set softtabstop=4
 set shiftwidth=4     " indent also with 4 spaces
 set expandtab        " expand tabs to spaces
 set cino=g0,(0
-" wrap lines at 100
-set textwidth=100
+" wrap lines at 90
+set textwidth=90
 set formatoptions+=t
 set autoindent
 " turn syntax highlighting on
