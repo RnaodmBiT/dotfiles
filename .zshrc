@@ -32,9 +32,12 @@ function p {
 
 function py {
     SCRIPT=$1
-    shift
+    if [ $# -gt 0 ]
+    then
+        shift
+    fi
     # The -- is needed to stop ipython from gobbling the arguments
-    ipython --pylab=qt5 $SCRIPT -- $@
+    ipython $SCRIPT -- $@
 }
 
 function ltspice {
