@@ -11,6 +11,7 @@ set foldmethod=indent
 set foldlevel=99
 
 nnoremap <space> za
+inoremap jk <Esc>
 
 " Add tab navigation shortcuts
 nmap <C-Tab> gt
